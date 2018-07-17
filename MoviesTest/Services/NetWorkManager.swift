@@ -9,29 +9,17 @@
 import Foundation
 import Alamofire
 
-struct MTCustomResponce {
-    let success : Bool
-    let message : String
-    
-    public init(success: Bool, messages: String?){
-        self.success = success
-        self.message = messages!
-    }
-}
-
-
-
 class NetWorkManager {
     
     static let sharedInstance = NetWorkManager()
     
     let apiKey = "524d1da15dd6397914216014187532db"
+    let dataStore = DataStore()
     
     
     // Get List
     
-    func getFilmsList() {
-
+    func getFilmsList(completion : @escaping (Array<ResultsModel>?, Error?) -> Void) {
         let url = "https://api.themoviedb.org/4/list/1?page=1&api_key=524d1da15dd6397914216014187532db"
         
         Alamofire.request(url, method: HTTPMethod.get , parameters: nil).responseJSON { (response) in
@@ -39,16 +27,52 @@ class NetWorkManager {
             case .success(_ ):
                 do {
                     let films = try JSONDecoder().decode(FilmsModel.self, from: response.data!)
-                    print(films)
+                    
+                    for film in films.results {
+                        let filmBase = BaseFilmsModel()
+                        filmBase.id = film.id
+                        filmBase.originalLanguage = film.originalLanguage
+                        filmBase.originalTitle = film.originalTitle
+                        filmBase.overview = film.overview
+                        filmBase.posterPath = film.posterPath
+                        filmBase.releaseDate = film.releaseDate
+                        self.dataStore.addData(object: filmBase)
+                    }
+
+                    completion(films.results, nil)
                 }catch let error{
                     print(error)
                 }
             case .failure(let error):
                 print(error)
+                completion(nil, error)
+
+            }
+        }
+    }
+    
+    // get trailer
+    
+    func getTrailer(filmId: String, completion : @escaping(Array<ResultsTrailerModel>? , Error?) -> Void) {
+        let url = "https://api.themoviedb.org/3/movie/\(filmId)/videos?api_key=524d1da15dd6397914216014187532db&language=en-US"
+
+        Alamofire.request(url, method: HTTPMethod.get , parameters: nil).responseJSON { (response) in
+            switch response.result {
+            case .success(_ ):
+                do {
+                    let data = try JSONDecoder().decode(FilmsTrailerModel.self, from: response.data!)
+                    completion(data.results, nil)
+                }catch let error{
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+                completion(nil, error)
+                
             }
         }
         
-}
-
+    }
+    
     
 }

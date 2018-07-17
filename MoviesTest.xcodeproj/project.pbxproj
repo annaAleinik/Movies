@@ -13,11 +13,15 @@
 		081E0AAB20FC8F6500DBA95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081E0AAA20FC8F6500DBA95C /* Assets.xcassets */; };
 		081E0AAE20FC8F6500DBA95C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081E0AAC20FC8F6500DBA95C /* LaunchScreen.storyboard */; };
 		081E0AB620FC9C1B00DBA95C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E0AB520FC9C1B00DBA95C /* APIConstants.swift */; };
+		08A6422E20FDE35000DF35D7 /* InfoFilmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6422D20FDE35000DF35D7 /* InfoFilmVC.swift */; };
+		08A6423020FDF6DC00DF35D7 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6422F20FDF6DC00DF35D7 /* ExtensionUIImageView.swift */; };
 		08B05EC920FCA9D600E60682 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B05EC820FCA9D600E60682 /* NetWorkManager.swift */; };
 		08B05ECB20FCBA1300E60682 /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B05ECA20FCBA1300E60682 /* FilmModel.swift */; };
 		08B05ED120FCC21800E60682 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B05ECF20FCC21800E60682 /* FilmCell.swift */; };
 		08B05ED220FCC21800E60682 /* FilmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08B05ED020FCC21800E60682 /* FilmCell.xib */; };
-		08B05EDD20FCDD1800E60682 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B05EDC20FCDD1800E60682 /* Constants.swift */; };
+		08C46EE920FE163100065E80 /* BaseFilmsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C46EE820FE163100065E80 /* BaseFilmsModel.swift */; };
+		08C46EEB20FE1BD100065E80 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C46EEA20FE1BD100065E80 /* DataStore.swift */; };
+		08C46EED20FE1FCF00065E80 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C46EEC20FE1FCF00065E80 /* Reachability.swift */; };
 		A2FAFE1D49A1982DF9F9055F /* Pods_MoviesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8113DFF157509246548A3A /* Pods_MoviesTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,11 +34,15 @@
 		081E0AAD20FC8F6500DBA95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		081E0AAF20FC8F6500DBA95C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		081E0AB520FC9C1B00DBA95C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		08A6422D20FDE35000DF35D7 /* InfoFilmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFilmVC.swift; sourceTree = "<group>"; };
+		08A6422F20FDF6DC00DF35D7 /* ExtensionUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImageView.swift; sourceTree = "<group>"; };
 		08B05EC820FCA9D600E60682 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		08B05ECA20FCBA1300E60682 /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 		08B05ECF20FCC21800E60682 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 		08B05ED020FCC21800E60682 /* FilmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCell.xib; sourceTree = "<group>"; };
-		08B05EDC20FCDD1800E60682 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		08C46EE820FE163100065E80 /* BaseFilmsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFilmsModel.swift; sourceTree = "<group>"; };
+		08C46EEA20FE1BD100065E80 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		08C46EEC20FE1FCF00065E80 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		52295B238EF3A95A69872BB1 /* Pods-MoviesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesTest/Pods-MoviesTest.debug.xcconfig"; sourceTree = "<group>"; };
 		AD8113DFF157509246548A3A /* Pods_MoviesTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8A0031B32688543241C144 /* Pods-MoviesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesTest/Pods-MoviesTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +83,6 @@
 			children = (
 				081E0AA320FC8F6400DBA95C /* AppDelegate.swift */,
 				081E0AB520FC9C1B00DBA95C /* APIConstants.swift */,
-				08B05EDC20FCDD1800E60682 /* Constants.swift */,
 				08B05ECE20FCC1CB00E60682 /* Controllers */,
 				08B05ECC20FCC19100E60682 /* Services */,
 				08B05ECD20FCC1BC00E60682 /* Models */,
@@ -92,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				08B05EC820FCA9D600E60682 /* NetWorkManager.swift */,
+				08C46EEA20FE1BD100065E80 /* DataStore.swift */,
+				08C46EEC20FE1FCF00065E80 /* Reachability.swift */,
+				08A6422F20FDF6DC00DF35D7 /* ExtensionUIImageView.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -100,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				08B05ECA20FCBA1300E60682 /* FilmModel.swift */,
+				08C46EE820FE163100065E80 /* BaseFilmsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				081E0AA520FC8F6400DBA95C /* ViewController.swift */,
+				08A6422D20FDE35000DF35D7 /* InfoFilmVC.swift */,
 				08B05ECF20FCC21800E60682 /* FilmCell.swift */,
 			);
 			path = Controllers;
@@ -210,12 +222,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -247,11 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C46EE920FE163100065E80 /* BaseFilmsModel.swift in Sources */,
+				08A6422E20FDE35000DF35D7 /* InfoFilmVC.swift in Sources */,
+				08C46EED20FE1FCF00065E80 /* Reachability.swift in Sources */,
+				08A6423020FDF6DC00DF35D7 /* ExtensionUIImageView.swift in Sources */,
 				08B05EC920FCA9D600E60682 /* NetWorkManager.swift in Sources */,
+				08C46EEB20FE1BD100065E80 /* DataStore.swift in Sources */,
 				081E0AA620FC8F6400DBA95C /* ViewController.swift in Sources */,
 				08B05ECB20FCBA1300E60682 /* FilmModel.swift in Sources */,
 				08B05ED120FCC21800E60682 /* FilmCell.swift in Sources */,
-				08B05EDD20FCDD1800E60682 /* Constants.swift in Sources */,
 				081E0AA420FC8F6400DBA95C /* AppDelegate.swift in Sources */,
 				081E0AB620FC9C1B00DBA95C /* APIConstants.swift in Sources */,
 			);

@@ -5,5 +5,5 @@ use_frameworks!
 target ‘MoviesTest’ do
 pod 'Alamofire', '~> 4.7'
  pod 'RealmSwift' 
-
+pod 'YouTubePlayer'
 end
