@@ -37,6 +37,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XBH-3e-WcM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableFooterView" contentMode="redraw" id="GFz-Sz-Vks">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,6 +55,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ipn-x8-Vop"/>
                     <connections>
+                        <outlet property="searchBar" destination="GFz-Sz-Vks" id="o9e-ot-TMJ"/>
                         <outlet property="tableView" destination="XBH-3e-WcM" id="R1i-Uq-vOg"/>
                     </connections>
                 </viewController>

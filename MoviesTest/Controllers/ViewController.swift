@@ -8,25 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var arrFilms = [ResultsModel]()
     let dataStore = DataStore()
+    var filteredData: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         tableView.register(UINib(nibName: "FilmCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
-        
+       
         if Reachability.isConnectedToNetwork(){
             self.getDataFromServer()
         }else{
             //self.getFataFromDB()
         }
-
+        
+//        self.filteredData = self.arrFilms.compactMap{$0.originalTitle}
+        
         self.navigationItem.title = "Films"
     }
     
@@ -53,8 +58,6 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "InfoFilmVC") as! InfoFilmVC
         self.navigationController?.pushViewController(infoVC, animated: true)
         infoVC.modelFilm = film
-
-        
     }
     
     func getDataFromServer(){
@@ -76,5 +79,12 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
 //        self.arrFilms = arr
 //    }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredData = self.arrFilms.compactMap{$0.originalTitle}
+        filteredData = searchText.isEmpty ? filteredData : filteredData.filter({(dataString: String) -> Bool in
+            return dataString.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        tableView.reloadData()
+    }
 
 }
