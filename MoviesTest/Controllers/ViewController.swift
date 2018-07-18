@@ -21,7 +21,6 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        searchBar.delegate = self
         tableView.register(UINib(nibName: "FilmCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
        
         if Reachability.isConnectedToNetwork(){

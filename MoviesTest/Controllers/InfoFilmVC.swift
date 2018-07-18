@@ -28,7 +28,9 @@ class InfoFilmVC: UIViewController {
         self.popularityLabel.text = String(describing: modelFilm?.popularity)
         self.descriptionTextView.text = modelFilm?.overview
         
-        let link = APIConst.baseURL + (modelFilm?.posterPath)!
+        let posterPath = modelFilm?.posterPath
+        guard let poster = posterPath else {return}
+        let link = APIConst.phosterURL + poster
         self.posterImg.downloadedFrom(link: link)
         
         guard let id = modelFilm?.id else {return}
@@ -39,7 +41,7 @@ class InfoFilmVC: UIViewController {
                 print(error?.localizedDescription)
                 return
             }
-            guard let idTrailer = film?.first?.id else {return}
+            guard let idTrailer = film?.first?.key else {return}
             self.videoPlayer.loadVideoID(idTrailer)
         }
         

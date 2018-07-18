@@ -12,6 +12,7 @@ import Foundation
 enum APIConst {
     static let baseURL = "http://files.tmdb.org"
     static let listURL = "4/list/1?api_key=524d1da15dd6397914216014187532db"
+    static let phosterURL = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
     
     
 }
