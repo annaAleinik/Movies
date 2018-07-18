@@ -50,7 +50,7 @@ class InfoFilmVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = modelFilm?.originalTitle
-
+        self.navigationController?.navigationBar.tintColor = UIColor(displayP3Red: 128/255, green: 92/255, blue: 232/255, alpha: 1)
        
     }
 

@@ -68,6 +68,9 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         }
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
     
 //    func getFataFromDB(){
 //       let arr = self.dataStore.getAllFilmsFromDB()
