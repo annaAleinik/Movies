@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0800342820FF685F006804BE /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0800342720FF685F006804BE /* SearchVC.swift */; };
 		081E0AA420FC8F6400DBA95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E0AA320FC8F6400DBA95C /* AppDelegate.swift */; };
 		081E0AA620FC8F6400DBA95C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081E0AA520FC8F6400DBA95C /* ViewController.swift */; };
 		081E0AA920FC8F6400DBA95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 081E0AA720FC8F6400DBA95C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0800342720FF685F006804BE /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		081E0AA020FC8F6400DBA95C /* MoviesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		081E0AA320FC8F6400DBA95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		081E0AA520FC8F6400DBA95C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				081E0AA520FC8F6400DBA95C /* ViewController.swift */,
 				08A6422D20FDE35000DF35D7 /* InfoFilmVC.swift */,
+				0800342720FF685F006804BE /* SearchVC.swift */,
 				08B05ECF20FCC21800E60682 /* FilmCell.swift */,
 			);
 			path = Controllers;
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0800342820FF685F006804BE /* SearchVC.swift in Sources */,
 				08C46EE920FE163100065E80 /* BaseFilmsModel.swift in Sources */,
 				08A6422E20FDE35000DF35D7 /* InfoFilmVC.swift in Sources */,
 				08C46EED20FE1FCF00065E80 /* Reachability.swift in Sources */,

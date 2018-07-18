@@ -75,4 +75,40 @@ class NetWorkManager {
     }
     
     
+    //search movies
+    
+    func searchMovies(searchText: String, completion : @escaping(Array<ResultsModel>? , Error?) -> Void) {
+        let url = "https://api.themoviedb.org/3/search/movie?api_key=524d1da15dd6397914216014187532db&language=en-US&query=\(searchText)&page=1&include_adult=false"
+        
+        Alamofire.request(url, method: HTTPMethod.get , parameters: nil).responseJSON { (response) in
+            switch response.result {
+            case .success(_ ):
+                do {
+                    let films = try JSONDecoder().decode(FilmsModel.self, from: response.data!)
+                    
+                    for film in films.results {
+                        let filmBase = BaseFilmsModel()
+                        filmBase.id = film.id
+                        filmBase.originalLanguage = film.originalLanguage
+                        filmBase.originalTitle = film.originalTitle
+                        filmBase.overview = film.overview
+                        filmBase.posterPath = film.posterPath
+                        filmBase.releaseDate = film.releaseDate
+                        self.dataStore.addData(object: filmBase)
+                    }
+                    
+                    completion(films.results, nil)
+                }catch let error{
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+                completion(nil, error)
+                
+            }
+        }
+        
+    }
+
+    
 }

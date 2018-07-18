@@ -1,42 +1,37 @@
 //
-//  ViewController.swift
+//  SearchVC.swift
 //  MoviesTest
 //
-//  Created by  Anita on 7/16/18.
+//  Created by  Anita on 7/18/18.
 //  Copyright © 2018  Anita. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
-   
+class SearchVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
+
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textField: UITextField!
     
     var arrFilms = [ResultsModel]()
-    let dataStore = DataStore()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         tableView.register(UINib(nibName: "FilmCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
-       
-        if Reachability.isConnectedToNetwork(){
-            self.getDataFromServer()
-        }else{
-            //self.getFataFromDB()
-        }
-        
-        self.navigationItem.title = "Films"
+        self.navigationItem.title = "Search"
+
     }
+    
     
     // MARK: - Table view data source
     
-     func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.arrFilms.count
     }
     
@@ -46,7 +41,6 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         cell.filmTitle.text = film.originalTitle
         return cell
     }
-
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let film = self.arrFilms[indexPath.row]
@@ -55,23 +49,17 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         infoVC.modelFilm = film
     }
     
-    func getDataFromServer(){
-        NetWorkManager.sharedInstance.getFilmsList { (film, error) in
+    @IBAction func searchTap(_ sender: UIButton) {
+        NetWorkManager.sharedInstance.searchMovies(searchText: self.textField.text!) { (films, error) in
             guard error == nil else {
                 print(error?.localizedDescription)
                 return
             }
-            if let array = film {
+            if let array = films {
                 self.arrFilms = array
                 self.tableView.reloadData()
             }
         }
     }
-
     
-//    func getFataFromDB(){
-//       let arr = self.dataStore.getAllFilmsFromDB()
-//        self.arrFilms = arr
-//    }
-
 }
