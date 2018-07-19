@@ -16,11 +16,9 @@ class InfoFilmVC: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
     @IBOutlet var videoPlayer: YouTubePlayerView!
     
     var modelFilm: FilmsProtocol?
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

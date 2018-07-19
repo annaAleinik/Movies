@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class SearchVC: UIViewController, UITableViewDelegate,UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -19,6 +19,7 @@ class SearchVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.textField.delegate = self
         tableView.register(UINib(nibName: "FilmCell", bundle: nil), forCellReuseIdentifier: "FilmCell")
         self.navigationItem.title = "Search"
 
@@ -50,6 +51,17 @@ class SearchVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     }
     
     @IBAction func searchTap(_ sender: UIButton) {
+        if Reachability.isConnectedToNetwork(){
+            self.searchFilms()
+        }else{
+            let alert = UIAlertController(title: "", message: "No network connection", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+
+        }
+    }
+    
+    func searchFilms()  {
         NetWorkManager.sharedInstance.searchMovies(searchText: self.textField.text!) { (films, error) in
             guard error == nil else {
                 print(error?.localizedDescription)
@@ -62,4 +74,12 @@ class SearchVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         }
     }
     
+    
+    //MARK: TextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 }

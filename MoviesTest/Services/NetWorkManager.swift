@@ -20,7 +20,7 @@ class NetWorkManager {
     // Get List
     
     func getFilmsList(completion : @escaping (Array<ResultsModel>?, Error?) -> Void) {
-        let url = "https://api.themoviedb.org/4/list/1?page=1&api_key=524d1da15dd6397914216014187532db"
+        let url = APIConst.baseURL + APIConst.listURL
         
         Alamofire.request(url, method: HTTPMethod.get , parameters: nil).responseJSON { (response) in
             switch response.result {
@@ -54,7 +54,7 @@ class NetWorkManager {
     // get trailer
     
     func getTrailer(filmId: String, completion : @escaping(Array<ResultsTrailerModel>? , Error?) -> Void) {
-        let url = "https://api.themoviedb.org/3/movie/\(filmId)/videos?api_key=524d1da15dd6397914216014187532db&language=en-US"
+        let url = APIConst.trailerBaseURL + filmId + APIConst.trailerFinishURL
 
         Alamofire.request(url, method: HTTPMethod.get , parameters: nil).responseJSON { (response) in
             switch response.result {
@@ -78,7 +78,7 @@ class NetWorkManager {
     //search movies
     
     func searchMovies(searchText: String, completion : @escaping(Array<ResultsModel>? , Error?) -> Void) {
-        let url = "https://api.themoviedb.org/3/search/movie?api_key=524d1da15dd6397914216014187532db&language=en-US&query=\(searchText)&page=1&include_adult=false"
+        let url = APIConst.searchMovBaseURL + searchText + APIConst.searchMovFinishURL
         
         Alamofire.request(url, method: HTTPMethod.get , parameters: nil).responseJSON { (response) in
             switch response.result {
