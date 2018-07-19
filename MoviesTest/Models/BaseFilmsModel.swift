@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class BaseFilmsModel: Object{
+class BaseFilmsModel: Object, FilmsProtocol{
     var popularity: Double = 0.0
     
     

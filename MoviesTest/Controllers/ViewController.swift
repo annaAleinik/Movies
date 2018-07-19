@@ -12,7 +12,7 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
    
     @IBOutlet weak var tableView: UITableView!
     
-    var arrFilms = [ResultsModel]()
+    var arrFilms = [FilmsProtocol]()
     let dataStore = DataStore()
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         if Reachability.isConnectedToNetwork(){
             self.getDataFromServer()
         }else{
-            //self.getFataFromDB()
+            self.getFataFromDB()
         }
         
         self.navigationItem.title = "Films"
@@ -72,9 +72,9 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
         return 60.0
     }
     
-//    func getFataFromDB(){
-//       let arr = self.dataStore.getAllFilmsFromDB()
-//        self.arrFilms = arr
-//    }
+    func getFataFromDB(){
+       let arr = self.dataStore.getAllFilmsFromDB()
+        self.arrFilms = arr
+    }
 
 }

@@ -13,11 +13,14 @@ struct FilmsModel : Codable {
 }
 
 
-struct ResultsModel: Codable{
-    let id: Int
-    let popularity: Double
-    let posterPath, originalLanguage, originalTitle: String
-    let overview, releaseDate: String
+struct ResultsModel: Codable , FilmsProtocol{
+    var popularity: Double = 0
+    var posterPath: String = ""
+    var originalLanguage: String = ""
+    var originalTitle: String = ""
+    var overview: String = ""
+    var releaseDate: String = ""
+    var id: Int = 0
     
     enum CodingKeys: String, CodingKey {
         case id

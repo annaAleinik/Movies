@@ -19,7 +19,7 @@ class InfoFilmVC: UIViewController {
     
     @IBOutlet var videoPlayer: YouTubePlayerView!
     
-    var modelFilm: ResultsModel?
+    var modelFilm: FilmsProtocol?
     
     
     override func viewWillAppear(_ animated: Bool) {
