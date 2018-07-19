@@ -230,7 +230,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyS-vt-aJE" customClass="YouTubePlayerView" customModule="YouTubePlayer">
                                 <rect key="frame" x="12" y="338" width="296" height="210"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95677906274795532" green="0.95691639184951782" blue="0.95674902200698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -239,11 +239,14 @@
                             <constraint firstItem="DR6-bZ-IQK" firstAttribute="leading" secondItem="Mbp-JI-qrg" secondAttribute="leading" constant="12" id="Kq2-o0-VZQ"/>
                             <constraint firstItem="hEv-zT-dvX" firstAttribute="leading" secondItem="Alf-kM-0DZ" secondAttribute="trailing" constant="8" id="Nk2-N1-LgA"/>
                             <constraint firstItem="Hk8-Ms-dd1" firstAttribute="leading" secondItem="Alf-kM-0DZ" secondAttribute="trailing" constant="8" id="V8h-oy-N7E"/>
+                            <constraint firstItem="Mbp-JI-qrg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hk8-Ms-dd1" secondAttribute="trailing" constant="12" id="WlY-Go-Af3"/>
                             <constraint firstItem="tyS-vt-aJE" firstAttribute="leading" secondItem="Mbp-JI-qrg" secondAttribute="leading" constant="12" id="bD6-0i-Czj"/>
                             <constraint firstItem="NIb-Px-GNZ" firstAttribute="top" secondItem="Alf-kM-0DZ" secondAttribute="top" id="cUe-V8-dD0"/>
                             <constraint firstItem="Mbp-JI-qrg" firstAttribute="trailing" secondItem="DR6-bZ-IQK" secondAttribute="trailing" constant="12" id="d8D-LL-hh7"/>
                             <constraint firstItem="Mbp-JI-qrg" firstAttribute="bottom" secondItem="tyS-vt-aJE" secondAttribute="bottom" constant="20" id="dzi-U2-hmP"/>
                             <constraint firstItem="Mbp-JI-qrg" firstAttribute="trailing" secondItem="tyS-vt-aJE" secondAttribute="trailing" constant="12" id="o3t-9L-kyn"/>
+                            <constraint firstItem="Mbp-JI-qrg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NIb-Px-GNZ" secondAttribute="trailing" constant="12" id="pYj-VA-77r"/>
+                            <constraint firstItem="Mbp-JI-qrg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hEv-zT-dvX" secondAttribute="trailing" constant="12" id="sVU-6k-mDp"/>
                             <constraint firstItem="tyS-vt-aJE" firstAttribute="top" secondItem="DR6-bZ-IQK" secondAttribute="bottom" constant="20" id="src-z5-QfH"/>
                             <constraint firstItem="DR6-bZ-IQK" firstAttribute="top" secondItem="Alf-kM-0DZ" secondAttribute="bottom" constant="10" id="txb-fm-emH"/>
                             <constraint firstItem="NIb-Px-GNZ" firstAttribute="leading" secondItem="Alf-kM-0DZ" secondAttribute="trailing" constant="8" id="wXr-r2-5UY"/>
